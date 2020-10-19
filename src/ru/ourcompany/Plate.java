@@ -1,10 +1,10 @@
 package ru.ourcompany;
 
 public class Plate {
-    protected static int foodIn;
+    protected int foodIn;
 
     Plate(int foodIn) {
-        Plate.foodIn = foodIn;
+        this.foodIn = foodIn;
     }
 
     public void eatFromAPlate(int countFood) {

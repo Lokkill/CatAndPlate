@@ -11,6 +11,10 @@ public class Cat {
     }
 
     public void eat(Plate plate) {
-        this.isFull = plate.eatFromAPlate(needFood, isFull);
+        if (!isFull && plate.checkCountFood(needFood)) {
+            plate.eatFromAPlate(needFood);
+            isFull = true;
+        }
     }
+
 }

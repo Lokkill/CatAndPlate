@@ -7,19 +7,16 @@ public class Plate {
         Plate.foodIn = foodIn;
     }
 
-    public boolean eatFromAPlate(int countFood, boolean isFull) {
-        if (isFull) return true; // Если кот сыт - он не будет есть
-        if (foodIn >= countFood) {
-            foodIn -= countFood;
-            return true;
-        } else {
-            System.out.println("В тарелке закончилась еда!");
-            return false;
-        }
+    public void eatFromAPlate(int countFood) {
+        foodIn -= countFood;
     }
 
     public void addFood(int countFood) {
         if (countFood > 0) foodIn += countFood;
         System.out.println("В тарелку добавили " + countFood + " единиц еды. Теперь в ней: " + foodIn + " единиц еды.");
+    }
+
+    public boolean checkCountFood(int needFood){
+        return foodIn >= needFood;
     }
 }
